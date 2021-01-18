@@ -1,2 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript program for building up rates</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
 
-<h1>Hello qs app</h1>
+    <div class="container" align="center">
+
+        <h1 id="h1">Build up rates App<hr>
+            For build up rates of Concrete <button id="button">Click here</button>
+        </h1>
+        <div id="concrete">
+            <h3>
+                <ol>
+                    <li>Materials</li>
+                </ol>
+            </h3>
+        <p>Enter the following data to describe the ratio of cement to sand to aggregates</p>
+        <form id="form1">
+            <label for="cement">Cement</label><br>
+            <input type="number" id="input1"><br>
+            <label for="sand">Sand</label><br>
+            <input type="number" id="input2"><br>
+            <label for="aggregates">Aggregates</label><br>
+            <input type="number" id="input3"><br>
+            <label for="concretevolume">Enter the volume of concrete in M<sup>3</sup></label><br>
+            <input type="number" id="input4"><br>
+        <h3>Enter the cost rates of each item</h3>
+        <span>i.e cost of one bag of cement</span>
+            <label for="cement">Cement</label><br>
+            <input type="number" id="input5"><br>
+            <label for="sand">Sand</label><br>
+            <input type="number" id="input6"><br>
+            <label for="aggregates">Aggregates</label><br>
+            <input type="number" id="input7"><br>
+            <label for="wastage">Add wastage percentage</label><br>
+            <input type="number"id="input8"><br>
+            <input type="submit" value="submit" id="submit">
+        </form>
+        <h2 id="concvolume"></h2>
+
+        <div id="table1">
+        <table>
+            <caption>
+                <h2>Table 1: Materials</h2>
+            </caption>
+
+            <tr>
+                <th>S/N</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Unit</th>
+                <th>Rate</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td id="cementid">1</td>
+                <td id="cementdescription">Cement</td>
+                <td id="cementquantity"></td>
+                <td id="cementunit">Bags</td>
+                <td id="cementrate"></td>
+                <td id="cementamount"></td>
+            </tr>
+            <tr>
+                <td id="sandid">2</td>
+                <td id="sanddescription">Sand</td>
+                <td id="sandquantity"></td>
+                <td id="sandunit">m<sup>3</sup></td>
+                <td id="sandrate"></td>
+                <td id="sandamount"></td>
+            </tr>
+            <tr>
+                <td id="aggrid">3</td>
+                <td id="aggrdescription">Aggregates</td>
+                <td id="aggrquantity"></td>
+                <td id="aggrunit">m<sup>3</sup></td>
+                <td id="aggrrate"></td>
+                <td id="aggramount"></td>
+            </tr>
+            <tr>
+                <td colspan="5">Sub summation</td>
+                <td id="subsum"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Add wastage</td>
+                <td id="sub1"></td>
+                <td>%</td>
+                <td id="sub2"></td>
+                <td id="sub3"></td>
+            </tr>
+            <tr>
+                <td colspan="5">Subtotal of material cost per <span id="span1"></span> M<sup>3</sup></td>
+                <td id="sub4"></td>
+            </tr>
+        </table>
+    </div>
+    <h3><ol start="2">
+        <li>Haulage and handling</li>
+     </ol></h3>
+    <p>Enter the rates of transport and handling of each item</p>
+    <form>
+        <label for="cementtransport">Cement</label><br>
+        <input type="number" id="input9"><br>
+        <label for="sandtransport">Sand</label><br>
+        <input type="number" id="input10"><br>
+        <label for="aggrtransport">Aggregates</label><br>
+        <input type="number" id="input11"><br>
+        <input type="submit" value="submit" id="submit2">
+
+    </form>
+    <div id=table2>
+        <table>
+            <caption>
+                <h2>Table 2: Haulage and handling</h2>
+           </caption>
+           <tr>
+                <th>S/N</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Unit</th>
+                <th>Rate</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Cement</td>
+                <td id="cementhaulaquantity"></td>
+                <td>bags</td>
+                <td id="cementhaularate"></td>
+                <td id="cementhaulaamount"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sand</td>
+                <td id="sandhaulaquantity"></td>
+                <td>M<sup>3</sup></td>
+                <td id="sandhaularate"></td>
+                <td id="sandhaulaamount"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Aggregates</td>
+                <td id="aggrhaulaquantity"></td>
+                <td>M<sup>3</sup></td>
+                <td id="aggrhaularate"></td>
+                <td id="aggrhaulaamount"></td>
+            </tr>
+            <tr>
+                <td colspan="5">Subtotal of transport and handling cost per <span id="span2"></span> M<sup>3</sup></td>
+                <td id="transportsum"></td>
+            </tr>
+        </table>
+    </div>
+    <h3>
+        <ol start="3">
+            <li>Labor cost</li>
+        </ol>
+    </h3>
+    <p>Enter the number of skilled and unskilled labors</p>
+    <form>
+        <label for="numskilledlabor">Skilled Labor</label><br>
+        <input type="number" id="input12"><br>
+        <label for="numunskilledlabor">Unskilled Labor</label><br>
+        <input type="number" id="input13"><br>
+        <p>Enter the rates of skilled and unskilled labors per day</p>
+        <label for="skilledrates">Skilled labor</label><br>
+        <input type="number" id="input14"><br>
+        <label for="unskilledrates">Unskilled labor</label><br>
+        <input type="number" id="input15"><br>
+        <label for="machinename">Concrete mixer name</label><br>
+        <input type="text" id="input16"><br>
+        <label for="unskilledrates">Concrete mixer output in M<sup>3</sup>/h</label><br>
+        <input type="number" id="input17"><br>
+        <input type="submit" value="submit" id="submit3">
+
+    </form>
+    <div id="table3">
+        <table>
+            <caption>
+                <h3>Table 3: Labor cost</h3>
+           </caption>
+           <tr>
+                <th>S/N</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Unit</th>
+                <th>Rate</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Operator (Skilled labor)</td>
+                <td id="numskilledlabor"></td>
+                <td>Person/hour</td>
+                <td id="rateskilledlabor"></td>
+                <td id="amountskilledlabor"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Labors(Unskilled labor)</td>
+                <td id="numunskilledlabor"></td>
+                <td>Person/hour</td>
+                <td id="rateunskilledlabor"></td>
+                <td id="amountunskilledlabor"></td>
+            </tr>
+            <tr>
+                <td colspan="5">Subtotal Labor cost per hour</td>
+                <td id="laborsubtotal"></td>
+            </tr>
+            <tr>
+                <td colspan="6"><span id="span3"></span> Concrete Mixer produce <span id="span4"></span> M<sup>3</sup>/h</td>
+            </tr>
+            <tr>
+                <td colspan="5">Subtotal Labor cost per M<sup>3</sup> = <span id="span5"></span>/<span id="span6"></span></td>
+                <td id="totallaborcost"></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+
+    </div>
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
