@@ -1,3 +1,3 @@
 # qs app
 
-qs-app.netlify.app
+http://qs-app.netlify.app
